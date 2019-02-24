@@ -5,14 +5,14 @@ dist: trusty
 sudo: false
 
 jdk:
-- oraclejdk8
+ - oraclejdk8
 
 install:
-- mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+ - mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 script: 
-- mvn test -B
+ - mvn test -B
 
 cache:
   directories:
-- $HOME/.m2
+   - $HOME/.m2
