@@ -80,4 +80,9 @@ public class Point {
 		return "Point[x=" + this.getX() + "," + "y=" + this.getY() + "]";
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		return this.isInPosition((Point) obj);
+	}
+
 }
