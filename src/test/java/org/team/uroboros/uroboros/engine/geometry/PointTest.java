@@ -1,19 +1,28 @@
 package org.team.uroboros.uroboros.engine.geometry;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.team.uroboros.uroboros.engine.physics.Vector;
 
 public class PointTest {
 
 	@Test
 	public void testCreateAPoint0XAnd0Y() {
 		Point point = new Point(0, 0);
-		assertEquals(0.0, point.getX().doubleValue());
-		assertEquals(0.0, point.getY().doubleValue());
+		assertEquals(0.0, point.getX().doubleValue(), 1);
+		assertEquals(0.0, point.getY().doubleValue(), 1);
+	}
+
+	@Test
+	public void testCreateAPointFromAVector() {
+		Vector vector = new Vector(5.5, 7.7);
+		Point point = new Point(vector);
+		assertEquals(5.5, point.getX().doubleValue(), 1);
+		assertEquals(7.7, point.getY().doubleValue(), 1);
 	}
 
 	@Test
@@ -54,8 +63,18 @@ public class PointTest {
 	}
 
 	@Test
+	public void testOriginDistanceOnOneStepOnNorthwestIsMinus1X1Y() {
+		assertEquals(new Point(-1.0, 1.0), Point.ORIGIN.distance(Direction.NORTHWEST, 1));
+	}
+
+	@Test
 	public void testOriginDistanceOnOneStepOnNorthIs0X1Y() {
 		assertEquals(new Point(0.0, 1.0), Point.ORIGIN.distance(Direction.NORTH, 1));
+	}
+
+	@Test
+	public void testOriginDistanceOnOneStepOnNortheastIs1X1Y() {
+		assertEquals(new Point(1.0, 1.0), Point.ORIGIN.distance(Direction.NORTHEAST, 1));
 	}
 
 	@Test
@@ -64,8 +83,18 @@ public class PointTest {
 	}
 
 	@Test
+	public void testOriginDistanceOnOneStepOnSoutheastIs1XMinus1Y() {
+		assertEquals(new Point(1.0, -1.0), Point.ORIGIN.distance(Direction.SOUTHEAST, 1));
+	}
+
+	@Test
 	public void testOriginDistanceOnOneStepOnSouthIs0XMinus1Y() {
 		assertEquals(new Point(0.0, -1.0), Point.ORIGIN.distance(Direction.SOUTH, 1));
+	}
+
+	@Test
+	public void testOriginDistanceOnOneStepOnSouthwestIsMinus1XMinus1Y() {
+		assertEquals(new Point(-1.0, -1.0), Point.ORIGIN.distance(Direction.SOUTHWEST, 1));
 	}
 
 	@Test
@@ -79,8 +108,18 @@ public class PointTest {
 	}
 
 	@Test
-	public void testOriginIsNotInPosition5X3Y() {
-		assertFalse(Point.ORIGIN.isInPosition(5.0, 3.0));
+	public void testOriginIsNotInPosition5X0Y() {
+		assertFalse(Point.ORIGIN.isInPosition(5.0, 0.0));
+	}
+
+	@Test
+	public void testOriginIsNotInPosition0X3Y() {
+		assertFalse(Point.ORIGIN.isInPosition(0.0, 3.0));
+	}
+
+	@Test
+	public void testOriginDistanceOnOneStepOnNorthAndTwoStepsOnEastIs2X1Y() {
+		assertEquals(new Point(2.0, 1.0), Point.ORIGIN.distance(Direction.NORTH, 1, Direction.EAST, 2));
 	}
 
 }

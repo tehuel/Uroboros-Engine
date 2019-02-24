@@ -1,4 +1,4 @@
-package org.team.uroboros.uroboros.engine.ui;
+package org.team.uroboros.uroboros.engine.ui.resources;
 
 public class Color {
 
@@ -24,6 +24,11 @@ public class Color {
 
 	public String hexCode() {
 		return hexcode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return this.hexcode == ((Color) obj).hexcode;
 	}
 
 }

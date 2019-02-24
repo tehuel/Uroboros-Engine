@@ -47,8 +47,7 @@ public class Sprite {
 		}
 
 		catch (Exception e) {
-			// TODO
-			e.printStackTrace();
+
 		}
 	}
 

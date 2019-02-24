@@ -9,12 +9,20 @@ public abstract class Scene {
 
 	private List<GameObject> gameObjects = new ArrayList<>();
 
-	public List<GameObject> getGameObject() {
+	public List<GameObject> getGameObjects() {
 		return gameObjects;
 	}
 
 	public void add(GameObject gameObject) {
 		gameObjects.add(gameObject);
+	}
+
+	public boolean isEmpty() {
+		return this.gameObjects.isEmpty();
+	}
+
+	public boolean contains(GameObject gameObject) {
+		return this.gameObjects.contains(gameObject);
 	}
 
 	public void removeGameObjectsWithPendingOfDestruction() {

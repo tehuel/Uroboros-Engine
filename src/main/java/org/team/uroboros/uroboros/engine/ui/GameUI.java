@@ -2,7 +2,7 @@ package org.team.uroboros.uroboros.engine.ui;
 
 import static java.awt.Color.decode;
 import static java.awt.RenderingHints.*;
-import static org.team.uroboros.uroboros.engine.ui.Color.*;
+import static org.team.uroboros.uroboros.engine.ui.resources.Color.*;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
@@ -17,6 +17,7 @@ import java.util.Arrays;
 import org.team.uroboros.uroboros.engine.input.Key;
 import org.team.uroboros.uroboros.engine.store.render.Render;
 import org.team.uroboros.uroboros.engine.store.render.RenderStore;
+import org.team.uroboros.uroboros.engine.ui.resources.Color;
 import org.team.uroboros.uroboros.engine.utils.redux.Dispatch;
 
 @SuppressWarnings("serial")

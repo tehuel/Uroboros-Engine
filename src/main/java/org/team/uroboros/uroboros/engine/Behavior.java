@@ -1,6 +1,6 @@
 package org.team.uroboros.uroboros.engine;
 
-public abstract class Behaviour extends Component {
+public abstract class Behavior extends Component {
 
 	protected Boolean enabled = false;
 

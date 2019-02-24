@@ -6,7 +6,7 @@ import org.team.uroboros.uroboros.engine.store.update.UpdateStore;
 import org.team.uroboros.uroboros.engine.ui.Graphics;
 import org.team.uroboros.uroboros.engine.utils.redux.Unsubscribe;
 
-public abstract class MonoBehavior extends Behaviour {
+public abstract class MonoBehavior extends Behavior {
 
 	private final UpdateStore updateStore = UpdateStore.getInstance();
 	private final RenderStore renderStore = RenderStore.getInstance();
