@@ -1,6 +1,9 @@
 # Uroboros Engine
 Uroboros Engine is a Java 2D game development Framework, with the aim of bringing the universe of the creation of video games to students or freelance programmers.
 
+* ***Master*** branch: [![Build Status](https://api.travis-ci.org/TeamUroboros/Uroboros-Engine.svg?branch=master)](https://travis-ci.org/TeamUroboros/Uroboros-Engine)
+* ***Develop*** branch:  [![Build Status](https://api.travis-ci.org/TeamUroboros/Uroboros-Engine.svg?branch=develop)](https://travis-ci.org/TeamUroboros/Uroboros-Engine)
+
 ### Prerequisites
 
 * Eclipse >= ***Neon***.
