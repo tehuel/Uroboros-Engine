@@ -1,6 +1,6 @@
 package org.team.uroboros.uroboros.engine.ui;
 
-import org.team.uroboros.uroboros.engine.geometry.Transform;
+import org.team.uroboros.uroboros.engine.physics.RigidBody;
 import org.team.uroboros.uroboros.engine.ui.resources.Sprite;
 
 public class SpriteRenderer extends Renderer {
@@ -13,8 +13,8 @@ public class SpriteRenderer extends Renderer {
 
 	@Override
 	public void render(Graphics graphics) {
-		Transform transform = this.getGameObject().getComponent(Transform.class);
-		graphics.render(sprite, transform.getPosition(), transform.getLocalCenter(), transform.getRotation());
+		RigidBody body = this.getGameObject().getComponent(RigidBody.class);
+		graphics.render(sprite, body.getPosition(), body.getLocalCenter(), body.getRotation());
 	}
 
 }

@@ -1,11 +1,15 @@
 package org.team.uroboros.uroboros.engine;
 
-import org.team.uroboros.uroboros.engine.geometry.Transform;
+import org.team.uroboros.uroboros.engine.physics.RigidBody;
 import org.team.uroboros.uroboros.engine.physics.Vector;
 
 public class Object implements Cloneable {
 
-	public Boolean isDestructionPending = false;
+	protected boolean isDestructionPending = false;
+
+	public boolean isDestructionPending() {
+		return this.isDestructionPending;
+	}
 
 	public static void Destroy(GameObject object) {
 		object.isDestructionPending = true;
@@ -37,11 +41,11 @@ public class Object implements Cloneable {
 		return clone;
 	}
 
-	public static Object Instantiate(Object original, Transform parent) {
+	public static Object Instantiate(Object original, RigidBody parent) {
 		return null;
 	}
 
-	public static Object Instantiate(Object original, Transform parent, Boolean instantiateInWorldSpace) {
+	public static Object Instantiate(Object original, RigidBody parent, Boolean instantiateInWorldSpace) {
 		return null;
 	}
 
@@ -49,7 +53,7 @@ public class Object implements Cloneable {
 		return null;
 	}
 
-	public static Object Instantiate(Object original, Vector position, double rotation, Transform parent) {
+	public static Object Instantiate(Object original, Vector position, double rotation, RigidBody parent) {
 		return null;
 	}
 

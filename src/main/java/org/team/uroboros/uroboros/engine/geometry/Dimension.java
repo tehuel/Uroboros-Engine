@@ -4,17 +4,17 @@ import org.team.uroboros.uroboros.engine.utils.Pair;
 
 public class Dimension {
 
-	private final Pair<Integer, Integer> pair;
+	private final Pair<Double, Double> pair;
 
-	public Dimension(Integer width, Integer height) {
-		pair = new Pair<Integer, Integer>(width, height);
+	public Dimension(double width, double height) {
+		pair = new Pair<Double, Double>(width, height);
 	}
 
-	public Integer getWidth() {
+	public Double getWidth() {
 		return pair.first();
 	}
 
-	public Integer getHeight() {
+	public Double getHeight() {
 		return pair.second();
 	}
 

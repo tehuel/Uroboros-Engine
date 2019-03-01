@@ -26,7 +26,7 @@ public abstract class Scene {
 	}
 
 	public void removeGameObjectsWithPendingOfDestruction() {
-		gameObjects.removeIf(gameObject -> gameObject.isDestructionPending);
+		gameObjects.removeIf(gameObject -> gameObject.isDestructionPending());
 	}
 
 }

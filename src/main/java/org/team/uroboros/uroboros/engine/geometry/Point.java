@@ -13,7 +13,7 @@ public class Point {
 	}
 
 	public Point(Vector2 vector) {
-		pair = new Pair<Double, Double>(vector.x, vector.y);
+		this(vector.x, vector.y);
 	}
 
 	public Double getX() {

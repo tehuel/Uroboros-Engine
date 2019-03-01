@@ -1,39 +1,36 @@
-package org.team.uroboros.uroboros.engine.geometry;
+package org.team.uroboros.uroboros.engine.geometry.shape;
 
-import org.dyn4j.geometry.Mass;
-import org.team.uroboros.uroboros.engine.Component;
+import static org.team.uroboros.uroboros.engine.ui.resources.Color.*;
+
+import org.dyn4j.geometry.Convex;
+import org.dyn4j.geometry.Transform;
+import org.team.uroboros.uroboros.engine.geometry.Dimension;
+import org.team.uroboros.uroboros.engine.geometry.Direction;
+import org.team.uroboros.uroboros.engine.geometry.Point;
+import org.team.uroboros.uroboros.engine.geometry.Transformable;
 import org.team.uroboros.uroboros.engine.physics.Vector;
+import org.team.uroboros.uroboros.engine.ui.resources.Color;
 
-public class Transform extends Component implements Transformable {
+public abstract class Shape implements Transformable {
 
-	public Mass mass;
-	public org.dyn4j.geometry.Transform wrappedObject;
+	private Color color;
+	protected org.dyn4j.geometry.Shape shape;
 
-	@Override
-	protected void onAttach() {
-		mass = new Mass();
-		wrappedObject = new org.dyn4j.geometry.Transform();
+	public Shape() {
+		this.color = BLUE;
 	}
 
-	@Override
-	protected void onDettach() {
-		wrappedObject = null;
-		mass = null;
-	}
-	
-	@Override
-	public Point getPosition() {
-		return new Point(wrappedObject.getTransformed(mass.getCenter()));
+	public Shape(Color color) {
+		this.color = color;
 	}
 
-	@Override
-	public Point getLocalCenter() {
-		return new Point(mass.getCenter());
+	public Color getColor() {
+		return this.color;
 	}
 
 	@Override
 	public void translate(double x, double y) {
-		wrappedObject.translate(x, y);
+		shape.translate(x, y);
 	}
 
 	@Override
@@ -88,7 +85,7 @@ public class Transform extends Component implements Transformable {
 
 	@Override
 	public void translateTo(double x, double y) {
-		wrappedObject.translate(x - this.getPosition().getX(), y - this.getPosition().getY());
+		this.translate(x, y);
 	}
 
 	@Override
@@ -97,38 +94,23 @@ public class Transform extends Component implements Transformable {
 	}
 
 	@Override
-	public Double getRotation() {
-		return wrappedObject.getRotation();
-	}
-
-	@Override
 	public void rotate(double theta) {
-		wrappedObject.rotate(theta);
+		shape.rotate(theta);
 	}
 
 	@Override
-	public void rotate(double theta, Vector vector) {
-		this.rotate(theta, vector.x, vector.y);
-	}
-
-	public void rotate(double theta, Point point) {
-		this.rotate(theta, point.getX(), point.getY());
+	public void rotate(double theta, Vector point) {
+		shape.rotate(theta, point);
 	}
 
 	@Override
 	public void rotate(double theta, double x, double y) {
-		wrappedObject.rotate(theta, x, y);
+		shape.rotate(theta, x, y);
 	}
 
 	@Override
 	public void rotateAboutCenter(double theta) {
-		this.rotate(theta, this.getPosition());
-	}
-
-	@Override
-	public Dimension getScale() {
-		// TODO Auto-generated method stub
-		return null;
+		shape.rotateAboutCenter(theta);
 	}
 
 	@Override
@@ -141,6 +123,26 @@ public class Transform extends Component implements Transformable {
 	public void scale(Dimension dimension) {
 		// TODO Auto-generated method stub
 
+	}
+
+	public Point getLocalCenter() {
+		return new Point(shape.getCenter());
+	}
+
+	public boolean contains(Vector point) {
+		return shape.contains(point);
+	}
+
+	public boolean contains(Vector point, Transform transform) {
+		return shape.contains(point, transform);
+	}
+
+	public void createMass(double density) {
+		shape.createMass(density);
+	}
+
+	public Convex getConvex() {
+		return (Convex) shape;
 	}
 
 }

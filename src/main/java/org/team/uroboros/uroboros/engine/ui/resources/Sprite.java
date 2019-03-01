@@ -33,11 +33,11 @@ public class Sprite {
 		return dimension;
 	}
 
-	public Integer getWidth() {
+	public Double getWidth() {
 		return dimension.getWidth();
 	}
 
-	public Integer getHeight() {
+	public Double getHeight() {
 		return dimension.getHeight();
 	}
 

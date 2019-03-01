@@ -2,10 +2,6 @@ package org.team.uroboros.uroboros.engine.geometry;
 
 public interface Translatable {
 
-	public abstract Point getPosition();
-
-	public abstract Point getLocalCenter();
-
 	public abstract void translate(double x, double y);
 
 	public abstract void translate(Point position);

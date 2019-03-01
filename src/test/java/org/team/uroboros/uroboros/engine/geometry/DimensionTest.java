@@ -9,14 +9,14 @@ public class DimensionTest {
 	@Test
 	public void testCreateADimensionWithWidth800And600Height() {
 		Dimension dimension = new Dimension(800, 600);
-		assertEquals(800, dimension.getWidth().intValue());
-		assertEquals(600, dimension.getHeight().intValue());
+		assertEquals(800, dimension.getWidth().doubleValue(), 1);
+		assertEquals(600, dimension.getHeight().doubleValue(), 1);
 	}
 
 	@Test
 	public void testDimensionRendersCorrectly() {
 		Dimension dimension = new Dimension(800, 600);
-		assertEquals("Dimension[width=800,height=600]", dimension.toString());
+		assertEquals("Dimension[width=800.0,height=600.0]", dimension.toString());
 	}
 
 }

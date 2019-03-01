@@ -27,8 +27,9 @@ public class SceneTest {
 	public void testRemoveGameObjectsWithPendingOfDestruction() {
 		Scene scene = new Scene() {};
 		GameObject gameObject = new GameObject() {};
-		gameObject.isDestructionPending = true;
+		GameObject.Destroy(gameObject);
 		scene.removeGameObjectsWithPendingOfDestruction();
+		assertTrue(gameObject.isDestructionPending());
 		assertTrue(scene.isEmpty());
 	}
 	

@@ -1,12 +1,13 @@
 package org.team.uroboros.uroboros.engine;
 
+import org.team.uroboros.uroboros.engine.physics.World;
 //import org.team.uroboros.uroboros.engine.physics.World;
 import org.team.uroboros.uroboros.engine.ui.GameUI;
 
 public class GameLoop implements Runnable {
 
 	private volatile Thread loopThread = new Thread(this);
-//	private final World world = new World();
+	private final World world = World.getInstance();
 	private final GameUI ui = new GameUI();
 	private final Game game;
 	private Integer ups = 60;
@@ -74,7 +75,7 @@ public class GameLoop implements Runnable {
 	}
 
 	private void update(Double deltaTime) {
-//		world.update(deltaTime);
+		world.update(deltaTime);
 		game.update(deltaTime);
 	}
 
