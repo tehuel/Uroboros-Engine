@@ -6,20 +6,32 @@ import java.io.File;
 import javax.imageio.ImageIO;
 
 import org.team.uroboros.uroboros.engine.geometry.Dimension;
+import org.team.uroboros.uroboros.engine.geometry.Point;
+import org.team.uroboros.uroboros.engine.ui.animation.SpriteSheet;
 
-public class Sprite {
-
+public class Sprite
+{
+	private final Point point;
 	private final String path;
 	private final Dimension dimension;
 	private BufferedImage spriteImg;
 
 	public Sprite(String path, Dimension dimension) {
+		this.point=null;
 		this.path = path;
+		this.dimension = dimension;
+		this.createImage();
+	}
+	
+	public Sprite(SpriteSheet image, Point point, Dimension dimension) {
+		this.path = image.getPath(); 
+		this.point = point;
 		this.dimension = dimension;
 		this.createImage();
 	}
 
 	public Sprite(String path, Integer width, Integer height) {
+		this.point=null;
 		this.path = path;
 		this.dimension = new Dimension(width, height);
 		this.createImage();
@@ -52,7 +64,22 @@ public class Sprite {
 	}
 
 	public BufferedImage getSpriteImg() {
+		if (hadCoordinate())
+		{
+			getSubImage();
+		}
 		return spriteImg;
+	}
+
+	private boolean hadCoordinate() 
+	{
+		return point != null;
+	}
+	
+	
+	private BufferedImage getSubImage()
+	{
+		return spriteImg.getSubimage(point.getX().intValue(), point.getY().intValue(), dimension.getWidth(), dimension.getHeight());
 	}
 
 }
