@@ -10,10 +10,11 @@ public enum Mouse implements MouseMotionListener, MouseWheelListener, MouseListe
 	
 	BUTTON1, BUTTON2, BUTTON3, MOUSE_WHEEL, MOUSE_CLICKED, MOUSE_DRAGGED, MOUSE_PRESSED, MOUSE_RELEASED;
 	
+	private int keyCode;
 	private Boolean isPressed = false;
 	
 	private Mouse() {
-		// TODO Auto-generated constructor stub
+		// creo q es por aca!!!
 	}
 
 	public Boolean isPressed() {
@@ -33,7 +34,6 @@ public enum Mouse implements MouseMotionListener, MouseWheelListener, MouseListe
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// tiene que definir un nuevo punto?
-		
 	}
 
 	@Override
@@ -78,6 +78,5 @@ public enum Mouse implements MouseMotionListener, MouseWheelListener, MouseListe
 			isPressed = false;
 		}
 	}
-	
 
 }

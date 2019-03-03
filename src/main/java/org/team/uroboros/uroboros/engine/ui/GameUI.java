@@ -15,6 +15,7 @@ import java.awt.event.WindowListener;
 import java.util.Arrays;
 
 import org.team.uroboros.uroboros.engine.input.Key;
+import org.team.uroboros.uroboros.engine.input.Mouse;
 import org.team.uroboros.uroboros.engine.store.render.Render;
 import org.team.uroboros.uroboros.engine.store.render.RenderStore;
 import org.team.uroboros.uroboros.engine.ui.resources.Color;
@@ -36,6 +37,9 @@ public class GameUI extends Frame implements WindowListener, ComponentListener {
 		canvas.setFocusable(true);
 		canvas.setFocusTraversalKeysEnabled(true);
 		Arrays.asList(Key.values()).forEach(canvas::addKeyListener);
+		Arrays.asList(Mouse.values()).forEach(canvas::addMouseMotionListener);
+		Arrays.asList(Mouse.values()).forEach(canvas::addMouseListener);
+		Arrays.asList(Mouse.values()).forEach(canvas::addMouseWheelListener);
 		this.setSize(dimension);
 		this.setPreferredSize(dimension);
 		this.setMinimumSize(dimension);
