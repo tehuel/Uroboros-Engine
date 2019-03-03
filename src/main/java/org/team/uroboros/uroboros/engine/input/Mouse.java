@@ -24,6 +24,7 @@ public enum Mouse implements MouseMotionListener, MouseWheelListener, MouseListe
 	public void mouseDragged(MouseEvent e) {
 		if(e.getButton() == MouseEvent.MOUSE_DRAGGED) {
 			isPressed = true;
+//			e.translatePoint(x, y);
 			// alcanza con saber que esta presionada?
 		}
 		
@@ -32,6 +33,7 @@ public enum Mouse implements MouseMotionListener, MouseWheelListener, MouseListe
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// tiene que definir un nuevo punto?
+		
 	}
 
 	@Override
