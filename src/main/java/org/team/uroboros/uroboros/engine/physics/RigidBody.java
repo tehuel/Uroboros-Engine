@@ -4,16 +4,16 @@ import org.dyn4j.dynamics.Body;
 import org.dyn4j.geometry.MassType;
 import org.dyn4j.geometry.Transform;
 import org.team.uroboros.uroboros.engine.Component;
-import org.team.uroboros.uroboros.engine.geometry.Dimension;
 import org.team.uroboros.uroboros.engine.geometry.Direction;
 import org.team.uroboros.uroboros.engine.geometry.Point;
+import org.team.uroboros.uroboros.engine.geometry.Scale;
 import org.team.uroboros.uroboros.engine.geometry.Transformable;
-import org.team.uroboros.uroboros.engine.geometry.collider.Collider;
+import org.team.uroboros.uroboros.engine.physics.collider.Collider;
 
 public class RigidBody extends Component implements Transformable {
 
 	public final Body body = new Body();
-	private final World world = World.getInstance();
+	private Scale scale = new Scale(1, 1);
 
 	public RigidBody() {
 		body.setMassType(MassType.NORMAL);
@@ -21,12 +21,12 @@ public class RigidBody extends Component implements Transformable {
 
 	@Override
 	protected void onAttach() {
-		world.addBody(this);
+		World.getInstance().addBody(this);
 	}
 
 	@Override
 	protected void onDettach() {
-		world.removeBody(this);
+		World.getInstance().removeBody(this);
 	}
 
 	public void addCollider(Collider collider) {
@@ -49,6 +49,7 @@ public class RigidBody extends Component implements Transformable {
 		this.translate(position.getX(), position.getY());
 	}
 
+	@Deprecated
 	@Override
 	public void translate(Direction direction, double steps) {
 		switch (direction) {
@@ -88,6 +89,7 @@ public class RigidBody extends Component implements Transformable {
 		}
 	}
 
+	@Deprecated
 	@Override
 	public void translate(Direction xDir, double xSteps, Direction yDir, double ySteps) {
 		this.translate(xDir, Double.valueOf(xSteps));
@@ -126,27 +128,32 @@ public class RigidBody extends Component implements Transformable {
 
 	@Override
 	public void scale(double x, double y) {
-		// TODO Auto-generated method stub
-
+		scale.scale(x, y);
 	}
 
 	@Override
-	public void scale(Dimension dimension) {
-		// TODO Auto-generated method stub
-
+	public void scale(Scale scale) {
+		this.scale.scale(scale);
 	}
 
-	public Dimension getScale() {
-		// TODO Auto-generated method stub
-		return new Dimension(1, 1);
+	public Scale getScale() {
+		return scale;
+	}
+
+	public double getXScale() {
+		return scale.getXScale();
+	}
+
+	public double getYScale() {
+		return scale.getYScale();
 	}
 
 	public Point getPosition() {
-		return new Point(body.getWorldCenter());
+		return new Point(body.getWorldCenter().x, body.getWorldCenter().y);
 	}
 
 	public Point getLocalCenter() {
-		return new Point(body.getLocalCenter());
+		return new Point(body.getLocalCenter().x, body.getLocalCenter().y);
 	}
 
 	public Double getRotation() {

@@ -1,4 +1,4 @@
-package org.team.uroboros.uroboros.engine.utils.redux;
+package org.team.uroboros.uroboros.engine.utils;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -2,7 +2,7 @@ package org.team.uroboros.uroboros.engine.ui;
 
 import org.team.uroboros.uroboros.engine.Component;
 import org.team.uroboros.uroboros.engine.store.render.RenderStore;
-import org.team.uroboros.uroboros.engine.utils.redux.Unsubscribe;
+import org.team.uroboros.uroboros.engine.utils.Unsubscribe;
 
 public abstract class Renderer extends Component {
 

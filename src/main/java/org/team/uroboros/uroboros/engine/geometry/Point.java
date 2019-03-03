@@ -1,6 +1,6 @@
 package org.team.uroboros.uroboros.engine.geometry;
 
-import org.dyn4j.geometry.Vector2;
+import org.team.uroboros.uroboros.engine.physics.Vector;
 import org.team.uroboros.uroboros.engine.utils.Pair;
 
 public class Point {
@@ -12,7 +12,7 @@ public class Point {
 		pair = new Pair<Double, Double>(x, y);
 	}
 
-	public Point(Vector2 vector) {
+	public Point(Vector vector) {
 		this(vector.x, vector.y);
 	}
 
@@ -28,6 +28,7 @@ public class Point {
 		return new Point(this.getX() + x, this.getY() + y);
 	}
 
+	@Deprecated
 	public Point distance(Direction direction, double steps) {
 		switch (direction) {
 
@@ -63,6 +64,7 @@ public class Point {
 		return this.distance(point.getX(), point.getY());
 	}
 
+	@Deprecated
 	public Point distance(Direction xDir, double xSteps, Direction yDir, double ySteps) {
 		return this.distance(xDir, xSteps).distance(yDir, ySteps);
 	}

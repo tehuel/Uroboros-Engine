@@ -1,7 +1,7 @@
 package org.team.uroboros.uroboros.engine.store.render;
 
-import org.team.uroboros.uroboros.engine.utils.redux.Action;
-import org.team.uroboros.uroboros.engine.utils.redux.BasicStore;
+import org.team.uroboros.uroboros.engine.utils.Action;
+import org.team.uroboros.uroboros.engine.utils.BasicStore;
 
 public class RenderStore extends BasicStore<GraphicsState> {
 

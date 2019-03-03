@@ -8,7 +8,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.ImageObserver;
 
 import org.team.uroboros.uroboros.engine.geometry.Point;
-import org.team.uroboros.uroboros.engine.geometry.shape.Rectangle;
+import org.team.uroboros.uroboros.engine.geometry.shape.RectangularShape;
 import org.team.uroboros.uroboros.engine.store.render.GraphicsState;
 import org.team.uroboros.uroboros.engine.ui.resources.Color;
 import org.team.uroboros.uroboros.engine.ui.resources.Sprite;
@@ -55,10 +55,11 @@ public class Graphics {
 		this.render(sprite, position, ORIGIN, 0.0);
 	}
 
-	public void render(Rectangle rectangle, Point position, Point center, Double rotation, Color color, boolean fill) {
+	public void render(RectangularShape shape, Point position, Point center, Double rotation, Color color,
+			Boolean fill) {
 		this.renderOnLocalTransform(position, rotation, () -> {
-			int width = (int) Math.ceil(rectangle.getWidth());
-			int height = (int) Math.ceil(rectangle.getHeight());
+			int width = (int) Math.ceil(shape.getWidth());
+			int height = (int) Math.ceil(shape.getHeight());
 			int x = (int) Math.ceil((center.getX() - width) * 0.5);
 			int y = (int) Math.ceil((center.getY() - height) * 0.5);
 			graphics.setColor(decode(color.hexCode()));
@@ -69,16 +70,16 @@ public class Graphics {
 		});
 	}
 
-	public void render(Rectangle rectangle, Point position, Point center, Color color, boolean fill) {
-		this.render(rectangle, position, center, 0.0, color, fill);
+	public void render(RectangularShape shape, Point position, Point center, Color color, Boolean fill) {
+		this.render(shape, position, center, 0.0, color, fill);
 	}
 
-	public void render(Rectangle rectangle, Point position, Double rotation, Color color, boolean fill) {
-		this.render(rectangle, position, ORIGIN, rotation, color, fill);
+	public void render(RectangularShape shape, Point position, Double rotation, Color color, Boolean fill) {
+		this.render(shape, position, ORIGIN, rotation, color, fill);
 	}
 
-	public void render(Rectangle rectangle, Point position, Color color, boolean fill) {
-		this.render(rectangle, position, ORIGIN, 0.0, color, fill);
+	public void render(RectangularShape shape, Point position, Color color, Boolean fill) {
+		this.render(shape, position, ORIGIN, 0.0, color, fill);
 	}
 
 }

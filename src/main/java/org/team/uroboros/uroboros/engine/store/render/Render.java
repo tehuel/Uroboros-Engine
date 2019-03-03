@@ -2,7 +2,7 @@ package org.team.uroboros.uroboros.engine.store.render;
 
 import java.awt.Graphics2D;
 
-import org.team.uroboros.uroboros.engine.utils.redux.Action;
+import org.team.uroboros.uroboros.engine.utils.Action;
 
 public class Render implements Action {
 

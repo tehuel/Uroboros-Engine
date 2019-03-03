@@ -3,7 +3,7 @@ package org.team.uroboros.uroboros.engine;
 import org.team.uroboros.uroboros.engine.scene.Scene;
 import org.team.uroboros.uroboros.engine.store.update.Update;
 import org.team.uroboros.uroboros.engine.store.update.UpdateStore;
-import org.team.uroboros.uroboros.engine.utils.redux.Dispatch;
+import org.team.uroboros.uroboros.engine.utils.Dispatch;
 
 public abstract class Game {
 

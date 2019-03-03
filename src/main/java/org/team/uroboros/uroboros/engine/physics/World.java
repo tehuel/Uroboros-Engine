@@ -1,7 +1,6 @@
 package org.team.uroboros.uroboros.engine.physics;
 
 import org.dyn4j.geometry.Vector2;
-import org.team.uroboros.uroboros.engine.geometry.collider.CollideBehavior;
 
 public class World {
 
@@ -32,10 +31,6 @@ public class World {
 
 	public void update(Double deltaTime) {
 		world.updatev(deltaTime);
-	}
-
-	public void listenCollision(CollideBehavior collide) {
-		world.addListener(collide);
 	}
 
 }

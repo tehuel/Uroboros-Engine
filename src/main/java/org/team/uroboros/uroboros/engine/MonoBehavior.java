@@ -4,7 +4,7 @@ import org.team.uroboros.uroboros.engine.store.render.RenderStore;
 import org.team.uroboros.uroboros.engine.store.update.DeltaState;
 import org.team.uroboros.uroboros.engine.store.update.UpdateStore;
 import org.team.uroboros.uroboros.engine.ui.Graphics;
-import org.team.uroboros.uroboros.engine.utils.redux.Unsubscribe;
+import org.team.uroboros.uroboros.engine.utils.Unsubscribe;
 
 public abstract class MonoBehavior extends Behavior {
 

@@ -4,6 +4,6 @@ public interface Scalable {
 
 	public abstract void scale(double x, double y);
 
-	public abstract void scale(Dimension dimension);
+	public abstract void scale(Scale scale);
 
 }

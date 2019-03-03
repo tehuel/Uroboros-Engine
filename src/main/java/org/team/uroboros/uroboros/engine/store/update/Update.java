@@ -1,6 +1,6 @@
 package org.team.uroboros.uroboros.engine.store.update;
 
-import org.team.uroboros.uroboros.engine.utils.redux.Action;
+import org.team.uroboros.uroboros.engine.utils.Action;
 
 public class Update implements Action {
 

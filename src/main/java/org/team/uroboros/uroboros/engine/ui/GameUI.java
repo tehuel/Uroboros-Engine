@@ -18,7 +18,7 @@ import org.team.uroboros.uroboros.engine.input.Key;
 import org.team.uroboros.uroboros.engine.store.render.Render;
 import org.team.uroboros.uroboros.engine.store.render.RenderStore;
 import org.team.uroboros.uroboros.engine.ui.resources.Color;
-import org.team.uroboros.uroboros.engine.utils.redux.Dispatch;
+import org.team.uroboros.uroboros.engine.utils.Dispatch;
 
 @SuppressWarnings("serial")
 public class GameUI extends Frame implements WindowListener, ComponentListener {

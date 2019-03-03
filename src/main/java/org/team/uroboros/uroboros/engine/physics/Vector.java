@@ -8,4 +8,8 @@ public class Vector extends Vector2 {
 		super(x, y);
 	}
 
+	public Vector(Vector2 vector) {
+		super(vector.x, vector.y);
+	}
+
 }
