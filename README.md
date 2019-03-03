@@ -13,7 +13,7 @@ Uroboros Engine is a Java 2D game development Framework, with the aim of bringin
 
 First of all, it is necessary to have a Java IDE with Maven plugin installed.
 
-Start by creating a new Maven project.
+Start by creating a new Maven project with the name you want.
 
 It is important to set the project to use Java 8.
 
@@ -40,7 +40,7 @@ It will be necessary to import Uroboros Engine as a dependency of it. (It is nec
 		</dependency>
 	</dependencies>	
 
-It will be necessary to set as VM Parameter ***-Dsun.java2d.opengl = true***, to fix perfonmance issues and strange behaviors.
+It will be necessary to set as VM Parameter ***-Dsun.java2d.opengl=true***, to fix perfonmance issues and strange behaviors.
 
 ### My First Game
 
