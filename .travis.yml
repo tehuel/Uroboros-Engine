@@ -29,5 +29,5 @@ notifications:
         urls:
             - "https://scalar.vector.im/api/neb/services/hooks/dHJhdmlzLWNpLyU0MDUxbHYzc3RyMSUzQW1hdHJpeC5vcmcvJTIxQVNYQXZRTWNMV3FrcXlBZ3diJTNBbWF0cml4Lm9yZw"
         on_success: always  # always|never|change
-        on_failure: always
-        on_start: never
+        on_failure: always  # always|never|change
+        on_start: never     # always|never|change
