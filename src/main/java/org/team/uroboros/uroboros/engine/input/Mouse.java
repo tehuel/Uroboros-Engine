@@ -30,14 +30,8 @@ public enum Mouse implements MouseMotionListener, MouseWheelListener, MouseListe
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
-		 setLastPosition(new Point(e.getX() * 0.5, (e.getY() * 0.5) * -1));
-		 System.out.println(e.getX());
-//		 e.getPoint()
-		 /**
-		  * Transformacion del Mouse respecto de canvas
-		  * 
-		  */
-		 System.out.println(e.getY()*(-1));
+								//	screenWidth 				   screenHeight
+		 setLastPosition(new Point(e.getX() - 800 * 0.5, (e.getY() - 600 * 0.5) * -1));
 	}
 
 	@Override
