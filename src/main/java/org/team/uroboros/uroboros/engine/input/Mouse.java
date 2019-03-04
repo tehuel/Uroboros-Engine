@@ -3,12 +3,10 @@ package org.team.uroboros.uroboros.engine.input;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
 
 import org.team.uroboros.uroboros.engine.geometry.Point;
 
-public enum Mouse implements MouseMotionListener, MouseWheelListener, MouseListener  {
+public enum Mouse implements MouseMotionListener, MouseListener  {
 	
 	BUTTON1, BUTTON2, BUTTON3, MOUSE_WHEEL, MOUSE_CLICKED, MOUSE_DRAGGED, MOUSE_PRESSED, MOUSE_RELEASED, MOUSE_MOVED;
 	
@@ -32,16 +30,6 @@ public enum Mouse implements MouseMotionListener, MouseWheelListener, MouseListe
 	public void mouseMoved(MouseEvent e) {
 								//	screenWidth 				   screenHeight
 		 setLastPosition(new Point(e.getX() - 800 * 0.5, (e.getY() - 600 * 0.5) * -1));
-	}
-
-	@Override
-	public void mouseWheelMoved(MouseWheelEvent e) {
-//		if(e.getWheelRotation() < 0 ) {
-//			// negative values rotated up
-//		} else {
-//			// positive values rotated down
-//		}
-//		
 	}
 
 	@Override

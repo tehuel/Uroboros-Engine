@@ -39,7 +39,6 @@ public class GameUI extends Frame implements WindowListener, ComponentListener {
 		Arrays.asList(Key.values()).forEach(canvas::addKeyListener);
 		Arrays.asList(Mouse.values()).forEach(canvas::addMouseMotionListener);
 		Arrays.asList(Mouse.values()).forEach(canvas::addMouseListener);
-		Arrays.asList(Mouse.values()).forEach(canvas::addMouseWheelListener);
 		this.setSize(dimension);
 		this.setPreferredSize(dimension);
 		this.setMinimumSize(dimension);
