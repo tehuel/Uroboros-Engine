@@ -17,42 +17,46 @@ Start by creating a new Maven project with the name you want.
 
 It is important to set the project to use Java 8.
 
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.0</version>
-				<configuration>
-					<source>8</source>
-					<target>8</target>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+```xml
+<build>
+	<plugins>
+		<plugin>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.8.0</version>
+			<configuration>
+				<source>8</source>
+				<target>8</target>
+			</configuration>
+		</plugin>
+	</plugins>
+</build>
+```
 
 It will be necessary to import Uroboros Engine as a dependency of it. (It is necessary to have imported the Uroboros Engine framework in the workspace previously).
-
-	<dependencies>
-		<dependency>
-			<groupId>org.team-uroboros</groupId>
-			<artifactId>uroboros-engine</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-	</dependencies>	
+```xml
+<dependencies>
+	<dependency>
+		<groupId>org.team-uroboros</groupId>
+		<artifactId>uroboros-engine</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+</dependencies>	
+```
 
 It will be necessary to set as VM Parameter ***-Dsun.java2d.opengl=true***, to fix perfonmance issues and strange behaviors.
 
 ### My First Game
 
-To create my first game, we will need to create a class that inherits from the Game class.
+To create my first game, we will need to create a class that inherits from the `Game` class.
 This class will need to be assigned an initial Scene, which must be a class that inherits from it.
 
+```java
 public class MainScene extends Scene {
-
+	
 	public MainScene() {
-
+		
 	}
-
+	
 }
 
 public class MyGame extends Game {
@@ -62,10 +66,11 @@ public class MyGame extends Game {
 	}
 
 }
+```
 
-Finally, create a Main Method and use the GameLauncher class to launch our game.
+Finally, create a `main` method and use the `GameLauncher` class to launch our game.
 
-
+```java
 public class MyGame extends Game {
 
 	public MyGame() {
@@ -77,6 +82,7 @@ public class MyGame extends Game {
 	}
 
 }
+```
 
 If you can see a black screen, it means that the framework is working.
 
